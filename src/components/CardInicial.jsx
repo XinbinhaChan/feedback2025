@@ -3,6 +3,14 @@ import { InputButton } from "./InputButton";
 
 export function CardInicial(props) {
   
+  function handleSubmit() {
+    if (props.notaAvaliacao !== 0) {
+      props.setSubmited(true);
+      return;
+    }
+
+    alert("Please, choose a rating!");
+  }
 
   return (
     <div className="bg-gradient-dark text-white mx-6 p-6 rounded-2xl font-overpass max-w-103">
@@ -45,8 +53,8 @@ export function CardInicial(props) {
       </div>
 
       <button
-        onClick={props.handleSubmit}
-        className="bg-orange w-full uppercase tracking-1 font-bold rounded-3xl text-sm py-3 hover:bg-white hover:text-orange hover:cursor-pointer"
+        onClick={handleSubmit}
+        className="bg-orange w-full uppercase tracking-1 font-bold rounded-3xl text-sm py-3 hover:bg-white hover:text-orange hover:cursor-pointer duration-500"
       >
         Submit
       </button>
